@@ -1,0 +1,27 @@
+@charset "utf-8";
+body,div,img,dl,dt,dd,ul,li,p,h1,input,h1,h2,h3{ margin:0; padding:0;font-weight: normal}
+a{text-decoration: none;}
+ul,li{ list-style:none}
+img{ border:none;}
+/*main*/
+.body-warper{background: #34415f url(../images/bg0.png);width: 100%;height: 578px;min-width: 1240px;overflow: hidden;}
+.feature-poster{background: url("../images/bg.png") no-repeat  center top;width: 100%;height: 578px;}
+.masker{background: url(../images/bg2.png);height: 480px;position: absolute;top: 0;left: 0;width: 100%;}
+.curt{height: 437px;width: 1139px;overflow: hidden;margin: 0 auto;}
+.attr-box{width:1139px;height: 578px;margin: 0 auto;background: url("../images/wonderwoman.jpg") no-repeat right top;position: relative;}
+.poster-top{position: relative;z-index: 1;color: #fff;padding:35px 0 0 30px;width: 580px;}
+.poster-top dl{border-bottom:1px solid #666}
+.poster-top dt h2{font-size:42px;}
+.poster-top dd{color:#eee;font-size: 14px;line-height: 24px;padding-bottom:10px;text-indent:2rem;}
+.poster-top dd a{color: #eee;}
+.poster-top dd a:hover{color:#136ec2}
+.poster-middle{padding-top: 10px;position: relative;z-index: 1;margin: 0 0 0 30px;}
+.secondsknow{float: left;height: 120px;margin-right: 50px;}
+.secondsknow-logo{margin: 9px 0 11px;width: 84px;height: 20px;background: url("../images/miaodong.png") no-repeat center center;}
+.secondsknow-gallery{float: left;padding-right: 100px;height: 80px;overflow: hidden;background: url("../images/miaodong1.png") no-repeat right center;}
+.secondsknow-gallery li,.preview dd{width: 140px;height: 80px;margin-right: 5px;float: left;position: relative;overflow: hidden;}
+.secondsknow-gallery li img,.preview img{width: 140px;height: 105px;}
+.video-shadow{position: absolute;left: 0;top:0;width: 100%;height: 100%;background: url("../images/hover.png") no-repeat center center;opacity: .75;cursor: pointer;}
+.video-shadow:hover{opacity: 1}
+.preview{float: left;height: 80px;width: 140px;}
+.preview dt{font-size: 14px;color:#eee;line-height: 40px;}
