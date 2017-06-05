@@ -127,20 +127,24 @@ img {
 }
 
 .secondsknow-gallery li img,
+.secondsknow-gallery li a,
+.preview a,
 .preview img {
+    display:inline-block;
     width: 140px;
     height: 105px;
 }
 
 .video-shadow {
     position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    left: 50%;
+    top: 50%;
+    width: 50px;
+    height: 50px;
     background: url("../images/hover.png") no-repeat center center;
     opacity: .75;
     cursor: pointer;
+    margin: -25px;
 }
 
 .video-shadow:hover {
@@ -157,4 +161,34 @@ img {
     font-size: 14px;
     color: #eee;
     line-height: 40px;
+}
+.fimle-info {
+    width: 50%;
+    border-collapse: collapse;
+
+}
+.fimle-info caption {
+    border-left: 12px solid #4F9CEE;
+    text-align: left;
+    padding: 10px;
+    font-size: 20px;
+}
+.fimle-info th,
+.fimle-info td {
+    border:1px solid #ddd;
+    padding-left: 8px;
+    text-align: center;
+    height: 32px;
+}
+.fimle-info th {
+    background: #f9f9f9;
+}
+.backtop{
+    display: inline-block;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 46px;
+    height: 46px;
+    background: url("../images/sideCatalog_a278e02.gif") no-repeat -1px -62px;
 }
