@@ -27,7 +27,7 @@ img {
 }
 
 .feature-poster {
-    background: url("../images/bg.png") no-repeat  center top;
+    background: url(../images/bg.png) no-repeat  center top;
     width: 100%;
     height: 578px;
 }
@@ -52,7 +52,7 @@ img {
     width: 1139px;
     height: 578px;
     margin: 0 auto;
-    background: url("../images/wonderwoman.jpg") no-repeat right top;
+    background: url(../images/wonderwoman.png) no-repeat right top;
     position: relative;
 }
 
@@ -162,17 +162,30 @@ img {
     color: #eee;
     line-height: 40px;
 }
+.audio {
+    margin: 10px 0 20px 0;
+}
 .fimle-info {
-    width: 50%;
+    width: 100%;
+    margin: 10px 0;
     border-collapse: collapse;
 
 }
-.fimle-info caption {
+
+.bluebordertit {
     border-left: 12px solid #4F9CEE;
     text-align: left;
     padding: 10px;
     font-size: 20px;
+    font-weight: normal;
 }
+.bluebordertit span,
+.bluebordertit a {
+    display: block;
+    font-size: 16px;
+    color:#666
+}
+.bluebordertit a{display: inline-block}
 .fimle-info th,
 .fimle-info td {
     border:1px solid #ddd;
@@ -183,7 +196,7 @@ img {
 .fimle-info th {
     background: #f9f9f9;
 }
-.backtop{
+.backtop {
     display: inline-block;
     position: fixed;
     bottom: 50px;
