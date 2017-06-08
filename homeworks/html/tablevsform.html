@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Title</title>
+</head>
+<body>
+<table class="timetable">
+    <caption>school timetable</caption>
+    <colgroup>
+        <col span="2">
+        <col class="bggreen">
+        <col class="w80">
+        <col class="bggreen">
+        <col class="fri">
+        <col span="2" class="colred">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>&nbsp;</th>
+            <th>Mon</th>
+            <th>Tues</th>
+            <th>Wed</th>
+            <th>Thurs</th>
+            <th>Fri</th>
+            <th>Sat</th>
+            <th>Sun</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>1st period</th>
+            <td rowspan="2">English</td>
+            <td></td>
+            <td></td>
+            <td>German</td>
+            <td>Dutch</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>2nd period</th>
+            <td></td>
+            <td></td>
+            <td>German</td>
+            <td>Dutch</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>3rd period</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>German</td>
+            <td>Dutch</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>4th period</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>German</td>
+            <td>Dutch</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+<table class="pronouns">
+    <caption>Personal pronouns</caption>
+    <tbody>
+        <tr>
+            <td colspan="3"></td>
+            <td>Subject</td>
+            <td>Object</td>
+        </tr>
+        <tr>
+            <td rowspan="5">Singular</td>
+            <td colspan="2">1st Person</td>
+            <td>l</td>
+            <td>me</td>
+        </tr>
+        <tr>
+            <td colspan="2">2nd  Person</td>
+            <td>you</td>
+            <td>you</td>
+        </tr>
+        <tr>
+            <td rowspan="3">3rd   Person</td>
+            <td>♂</td>
+            <td>you</td>
+            <td>you</td>
+        </tr>
+        <tr>
+            <td>♀</td>
+            <td>you</td>
+            <td>you</td>
+        </tr>
+        <tr>
+            <td>o</td>
+            <td>you</td>
+            <td>you</td>
+        </tr>
+        <tr>
+            <td rowspan="3">Plural</td>
+            <td colspan="2">1st Person</td>
+            <td>we</td>
+            <td>us</td>
+        </tr>
+        <tr>
+            <td colspan="2">2nd Person</td>
+            <td>you</td>
+            <td>you</td>
+        </tr>
+        <tr>
+            <td colspan="2">3rd Person</td>
+            <td>they</td>
+            <td>them</td>
+        </tr>
+    </tbody>
+</table>
+<form oninput="result.value = Math.pow(a.value,b.value)" class="calculator">
+   <fieldset>
+       <legend>任意次方计算器</legend>
+       <input type="number" id="a">的<input type="number" id="b">次方为：
+        <output name="result" ></output>
+   </fieldset>
+</form>
+<form method="get" action="test.php" class="order">
+    <fieldset>
+        <legend>Order a T-Shirt</legend>
+        <ul>
+            <li>
+                <label><span>Write your name : </span><input type="text" name="name"/></label>
+            </li>
+            <li>
+                <p>
+                    <span>Choose your size :</span>
+                    <label> small <input type="checkbox" name="size" value="small"></label>
+                    <label> Medium <input type="checkbox" name="size" value="Medium"></label>
+                    <label> Large <input type="checkbox" name="size" value="Large"></label>
+                    <label> Extra Large <input type="checkbox" name="sizee" value="Extra Large "></label>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <span></span>
+                    are you a lady or a Gentleman:
+                    <label>lady <input type="radio" name="sex" value="lady"></label>
+                    <label>Gentleman <input type="radio" name="sex" value="Gentleman"></label>
+                </p>
+            </li>
+            <li>
+                <p>
+                    choose your city:
+                    <select  name="city">
+                        <optgroup label="china"  >
+                            <option value="tj">tianjin</option>
+                            <option value="bj">beijing</option>
+                            <option value="sh">shanghai</option>
+                        </optgroup>
+                        <optgroup label="USA">
+                            <option value="NK">New York</option>
+                            <option value="LA">Los Angeles</option>
+                            <option value="CG">Chicago</option>
+                        </optgroup>
+                    </select>
+                </p>
+            </li>
+            <li>
+                <label>Write a comment:<br>
+                    <textarea name="comment"></textarea>
+                </label>
+
+            </li>
+            <li>
+                <label>
+                    add pic:  <input type="file" accept="image/gif,image/jpeg,image/jpg,image/png" name="pic">
+                </label>
+            </li>
+            <li>
+                <p><input type="reset" value="Reset" /> <button type="submit" >Send</button></p>
+            </li>
+        </ul>
+    </fieldset>
+
+</form>
+</body>
+</html>
