@@ -24,6 +24,12 @@ table{
     table-layout: fixed;
     border-collapse: collapse;
 }
+/*index*/
+.wraper{
+    width: 1200px;
+    margin: 0 auto;
+}
+nav li{margin: 10px;}
 /*main*/
 .body-warper {
     background: #34415f url(../images/bg0.png);
