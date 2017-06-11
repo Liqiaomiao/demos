@@ -298,6 +298,7 @@ nav li{margin: 10px;}
     width: 290px;
     height:500px;
     margin:0 auto;
+    padding-top: 30px;
 }
 .login-container form {
     width:100%;
@@ -324,11 +325,11 @@ nav li{margin: 10px;}
 .login-container ul li input {
     width: 238px;
     box-sizing: border-box;
-    padding-left: 15px;
+    padding-left: 12px;
     background: #fff;
     height: 42px;
     line-height: 42px;
-    margin-left: 3px;
+    margin:1px 0 0 3px;
     border: 0;
     outline: none;
     font-size: 16px;
