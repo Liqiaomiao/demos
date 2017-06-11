@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no">
+    <!--网站开启对 web app 程序的支持-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon " href="QQ.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <title>手机统一登录</title>
+</head>
+<body class="bggray">
+<div class="login-container">
+    <form action="#" method="post">
+       <div class="logo"></div>
+        <ul>
+            <li>
+                <input type="text" placeholder="QQ号码/手机/邮箱" name="username"  autocomplete="false">
+                <p></p>
+            </li>
+            <li>
+                <input type="password" placeholder="请输入您的QQ密码" name="psd"  autocomplete="false">
+                <p></p>
+            </li>
+        </ul>
+        <div class="btn-login"> 登 录 </div>
+        <div class="feedback">
+            <a class="fl">忘了密码？</a>
+            <a class="fr">注册新帐号</a>
+        </div>
+    </form>
+</div>
+<script>
+    $(document).ready(function () {
+
+        $("input").on("input propertychange",function () {
+            deltogggle(this)
+        }).on("focus",function () {
+            $("p").hide();
+            deltogggle(this);
+
+        });
+
+        $(document).on("click",function (event) {
+            var targetn = event.target.nodeName.toLowerCase();
+            if(targetn!="p"&&targetn!="input"){
+                $("p").hide()
+            }
+        });
+        $(".login-container li p").click(function () {
+            $(this).siblings("input").val("").focus();
+        })
+    })
+    function deltogggle(obj) {
+        var val = $(obj).val();
+        if(val!=""){
+            $(obj).siblings("p").show();
+        }else {
+            $(obj).siblings("p").hide();
+        }
+    }
+</script>
+</body>
+</html>
