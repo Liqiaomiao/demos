@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="song.css">
+    <title>Title</title>
+</head>
+<body>
+<div class="page">
+    <p class="time">0</p>
+    <div class="time2"></div>
+    <div class="m-song-bg"></div>
+    <div class="disc-container">
+        <img src="https://s3.music.126.net/m/s/img/needle-ip6.png?be4ebbeb6befadfcae75ce174e7db862" alt="" class="pointer">
+        <div class="disc">
+            <div class="icon-wrapper">
+                <ul class="icon_lists clear">
+                    <li class="hide stop" >
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-bofang"></use>
+                        </svg>
+
+                    </li>
+                    <li class="start">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-bofang1"></use>
+                        </svg>
+
+                    </li>
+                </ul>
+            </div>
+            <img src="http://p1.music.126.net/34YW1QtKxJ_3YnX9ZzKhzw==/2946691234868155.webp?imageView&thumbnail=721x0&quality=75&tostatic=0&type=webp" alt="" class="cover">
+            <img src="https://s3.music.126.net/m/s/img/disc-ip6.png?69796123ad7cfe95781ea38aac8f2d48" alt="" class="black">
+            <img src="https://s3.music.126.net/m/s/img/disc_light-ip6.png?996fc8a2bc62e1ab3f51f135fc459577" alt="" class="circle">
+        </div>
+    </div>
+    <div class="song-description">
+        <h2>
+            <span>成都</span>
+            <span class="song-gag">-</span>
+            <span class="song-author">赵雷</span>
+        </h2>
+        <div class="lyric">
+            <div class="song-scroll">
+                <div class="lines">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="u-footer">
+        <div class="footer-wraper">
+            <a href="#">打开</a>
+            <a href="#" class="main">下载</a>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-2.1.4.js"></script>
+<script src="//at.alicdn.com/t/font_1wycfd6coz3680k9.js"></script>
+<script>
+    $(document).ready(function () {
+        var htmlFontsize = document.documentElement.clientWidth/16;
+        document.getElementsByTagName('html')[0].style.fontSize=htmlFontsize+"px";
+
+        $.get('lyric.json').then(function (data) {
+            var array = data.lrc.lyric.split("\n");
+            var reg = /^\[(.+)\](.*)$/;
+            array =   array.map(function (string, index) {
+                var matches = string.match(reg);
+                if(matches){
+                    return {time:matches[1],words:matches[2]}
+                }
+            });
+            var $lyric = $(".lines");
+            var timesarray =[];
+            array.map(function (object,index) {
+                if(!object){return}
+
+                var $p=$('</p>');
+                $p.attr('data-time',object.time).text(object.words);
+                $p.appendTo($lyric);
+            });
+
+            var $audio = document.createElement('audio');
+            var src= "1792702528_1484965814706.mp3";
+            $audio.src = src;
+            $("body").append($audio);
+
+            var n =0;
+            var m =0;
+            var minutes = 0;
+            var s = 0;
+            var ms = 0;
+            function format(a) {
+                if(a<10){
+                    return a="0"+a;
+                }else{
+                    return a
+                }
+            }
+
+            $('.lines p').each(function (index,item) {
+                var thistime = $(this).attr("data-time").split(":");
+                var min = thistime[0];
+                var s = thistime[1].split(".")[0];
+                var ms = thistime[1].split(".")[1];
+                var totalms = min*60*1000+s*1000+ms;
+                timesarray[index]=totalms;
+            });
+
+
+            $(".start").on('touchstart',function () {
+
+                $(".disc").toggleClass("playing");
+                $audio.play().then(function () {
+                    var start = new  Date();
+                    timer =   setInterval(function () {
+                        var now = new  Date();
+                        var elapsed = now -start ;
+                        $(".lines p").each(function () {
+                            var n = $(this).index();
+                            var isok = elapsed - timesarray[n];
+
+
+                        })
+                    },10)
+
+
+
+                });
+
+
+            });
+
+            $(".stop").on("touchstart",function () {
+                $(".disc").removeClass("playing");
+                $audio.pause();
+               clearInterval(timer);
+            })
+
+        });
+    })
+
+
+
+</script>
+</body>
+</html>
